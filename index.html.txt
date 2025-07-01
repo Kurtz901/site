@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Para você, meu amor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: pink;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .love {
+      position: absolute;
+      font-size: 24px;
+      color: red;
+      animation: flutuar 2s ease-out forwards;
+      user-select: none;
+    }
+
+    @keyframes flutuar {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5);
+      }
+    }
+
+    .mensagem {
+      text-align: center;
+      padding-top: 100px;
+      font-size: 36px;
+      color: #d6007e;
+    }
+  </style>
+</head>
+<body onclick="espalharAmor(event)">
+  <div class="mensagem">Clique em qualquer lugar, meu amor 💘</div>
+
+  <script>
+    function espalharAmor(e) {
+      const amor = document.createElement("div");
+      amor.className = "love";
+      amor.innerText = "Eu te amo 💖";
+      document.body.appendChild(amor);
+      amor.style.left = e.clientX + "px";
+      amor.style.top = e.clientY + "px";
+
+      setTimeout(() => {
+        amor.remove();
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
